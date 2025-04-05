@@ -55,7 +55,7 @@ Noticed that the lazy-loading can be done instantly if the requested route is al
 
 Surprisingly, we found Multi-page PWA is kinda naturally "PRPL"! MPA has already provided built-in support for "PRL", and the second "P" involving Service Worker can be easily fulfilled in any PWA. 
 
-So what about the end result?
+So what  the end result?
 
 
 ![](/img/in-post/post-eleme-pwa/Lighthouse-before.png)
@@ -103,7 +103,7 @@ Although the reality is dark, we don't want to give up so easily. One optimizati
 
 @owencm have written a great post ["Reactive Web Design: The secret to building web apps that feel amazing"](https://medium.com/@owencm/reactive-web-design-the-secret-to-building-web-apps-that-feel-amazing-b5cbfe9b7c50) covering both "Instant loads with skeleton screens" and "Stable loads via predefined sizes on elements" to improve perceived performance and user experience. Yes, we actually used both. 
 
-What about we showing the end result after these optimizations first before entering technical nitty gritty? There you go!
+What  we showing the end result after these optimizations first before entering technical nitty gritty? There you go!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/K5JBGnMYO1s" frameborder="0" allowfullscreen></iframe>
 
@@ -119,7 +119,7 @@ This is a much better UX, right? Even we have slow navigation in slow devices, a
 
 As you might have guessed, the Skeleton Screen that consists of markups, styles, and images is inlined into `*.html` of each route. So they can be cached by Service Worker, be loaded instantly, and be rendered independently with any JavaScript.
 
-We don't want to manually craft each Skeleton Screen for each routes. It's a tedious job and we have to manually sync every change between Skeleton Screens and the actual UI components (Yes we treat every route as just a Vue component). But think about it, [Skeleton Screen is just a blank version of a page into which information is gradually loaded](https://www.lukew.com/ff/entry.asp?1797). What if we bake the Skeleton Screen into the actual UI component as just a loading state so we can render Skeleton Screen out directly from it without the issue of syncing?
+We don't want to manually craft each Skeleton Screen for each routes. It's a tedious job and we have to manually sync every change between Skeleton Screens and the actual UI components (Yes we treat every route as just a Vue component). But think  it, [Skeleton Screen is just a blank version of a page into which information is gradually loaded](https://www.lukew.com/ff/entry.asp?1797). What if we bake the Skeleton Screen into the actual UI component as just a loading state so we can render Skeleton Screen out directly from it without the issue of syncing?
 
 Thanks to the versatility of Vue, we can actually realize it with [Vue.js Server-Side Rendering](https://ssr.vuejs.org/en/). Instead of using it on a real server, we use it at build time to render Vue components to strings and injected them into HTML templates.
 
@@ -146,7 +146,7 @@ We indeed encountered this problem when testing our new beautiful Skeleton Scree
 ![](/img/in-post/post-eleme-pwa/nextTick-&-Load.png)
 
 
-I think you may curious about how this change performs in the wild, so I have refined MMPWA by rendering 5000 list items rather 1000 to make the differences more obvious, and by designing it in an A/B testing manner. The code is on [Github](https://github.com/Huxpro/mmpwa) and the demo is live on [huangxuan.me/mmpwa/](https://huangxuan.me/mmpwa). Here is also a video for loungers.
+I think you may curious  how this change performs in the wild, so I have refined MMPWA by rendering 5000 list items rather 1000 to make the differences more obvious, and by designing it in an A/B testing manner. The code is on [Github](https://github.com/Huxpro/mmpwa) and the demo is live on [huangxuan.me/mmpwa/](https://huangxuan.me/mmpwa). Here is also a video for loungers.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3Ws7XBHrPD8" frameborder="0" allowfullscreen></iframe>
@@ -165,7 +165,7 @@ Huge improvements right?  This time we hit First Paint (Skeleton Screen Paint) a
 
 But wait, why is there still a bunch of guiltily parser-blocking scripts? Are them all `async`? OK, ok. For historical reasons, we do keep some parser-blocking scripts, like [lib-flexible](https://github.com/amfe/lib-flexible), we couldn't get rid of it without a huge refactoring. But most of these blocking scripts are in fact `defer`. We expected that they can be executed after parsing and in order, however the profile kinda slap on my face. :(
 
-Remember I said I would talk about one issue of `defer` previously? Yes, that's it. I have had a [conversation](https://twitter.com/Huxpro/status/859842124849827841) with [Jake Archibald](https://twitter.com/jaffathecake) and it turns out it might be a bug of Chrome when the deferred scripts are fully cached. [Vote it at crbug](https://bugs.chromium.org/p/chromium/issues/detail?id=717979)!
+Remember I said I would talk  one issue of `defer` previously? Yes, that's it. I have had a [conversation](https://twitter.com/Huxpro/status/859842124849827841) with [Jake Archibald](https://twitter.com/jaffathecake) and it turns out it might be a bug of Chrome when the deferred scripts are fully cached. [Vote it at crbug](https://bugs.chromium.org/p/chromium/issues/detail?id=717979)!
 
 
 Similar improvements can be seen from Lighthouse (Under same server and network environment). A Pro Tip is you should always use lighthouse in a variable controlling approach.
@@ -175,7 +175,7 @@ Similar improvements can be seen from Lighthouse (Under same server and network 
 
 ### Performance In the Real World
 
-[Alex Russell](https://medium.com/@slightlylate) has given [a very insightful talk on mobile web performance](https://youtu.be/4bZvq3nodf4?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj) at Chrome Dev Summit 2016, talking about how hard can we build performant web applications on mobile devices. Highly recommended.
+[Alex Russell](https://medium.com/@slightlylate) has given [a very insightful talk on mobile web performance](https://youtu.be/4bZvq3nodf4?list=PLNYkxOF6rcIBTs2KPy1E6tIYaWoFcG3uj) at Chrome Dev Summit 2016, talking  how hard can we build performant web applications on mobile devices. Highly recommended.
 
 Chinese users tend to have a pretty powerful phone. MI4 is shipped with snapdragon 801 (slightly out-performs Nexus 5) but only costs 100$. It’s affordable by at least 80% of our users so we take it as a baseline.
 

@@ -5,9 +5,14 @@ subtitle:   " 个人学习使用mysql笔记"
 date:       2025-04-05 12:00:00
 author:     "mocanxi"
 header-type: text
+# header-img: "img/post-bg-js-module.jpg"
 catalog: true
+# published: false
 tags:
     - Mysql
+    - 笔记
+# categories: 
+#     - database
 ---
 
 * mysql 执行步骤
