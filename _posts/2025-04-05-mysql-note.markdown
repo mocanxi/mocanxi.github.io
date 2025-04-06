@@ -11,8 +11,8 @@ catalog: true
 tags:
     - Mysql
     - 笔记
-# categories: 
-#     - database
+categories: 
+    - database
 ---
 
 * mysql 执行步骤

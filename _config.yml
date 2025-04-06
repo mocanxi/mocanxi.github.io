@@ -3,7 +3,7 @@ title: mocanxi Blog
 SEOTitle: mocanxi的博客 | mocanxi Blog
 header-img: img/home-bg.png
 email: xiaochangshaoxu@gmail.com
-description: "这里是 @mocanxi 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
+description: "这里是 @mocanxi 的个人博客"
 keyword: "mocanxi, mocanxi的博客, mocanxi Blog, 博客, 个人网站, 互联网, Go, 后端"
 url: "https://ihry.top" # your host, for absolute URL
 baseurl: "https://ihry.top" # for example, '/blog' if your blog hosted on 'host/blog'
